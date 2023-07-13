@@ -1,5 +1,6 @@
 import './style.css';
 import ToDoList from "./modules/toDoList.js";
+import UI from './modules/ui.js';
 
 document
   .querySelector('.fa-arrows-rotate')
@@ -28,11 +29,11 @@ document
 
     const todotask = new ToDoList(description, completed, index);
 
-    UserInterface.addToDoLists(todotask);
+    UI.addToDoLists(todotask);
 
     LocalStorage.addToDoLists(todotask);
 
-    UserInterface.clearFields();
+    UI.clearFields();
 
     window.location.reload();
   });
