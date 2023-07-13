@@ -2,6 +2,7 @@ import './style.css';
 import ToDoList from "./modules/toDoList.js";
 import UI from './modules/ui.js';
 import LocalStorage from './modules/localStorage.js';
+import CompleteToDoList from './modules/CompleteToDoList.js';
 
 document
   .querySelector('.fa-arrows-rotate')
@@ -24,7 +25,6 @@ document
   })
 
   document.querySelector('.add-to-list').addEventListener('submit', (e) => {
-    // Prevent actual submit
     e.preventDefault();
   
     const inputText = document.querySelector('.text');

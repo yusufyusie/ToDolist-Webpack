@@ -15,6 +15,12 @@ class UI {
     static clearFields() {
         document.querySelector('.text').value = '';
       }
+
+      static showToDoLists() {
+        const todolists = LocalStorage.getToDoLists();
+    
+        todolists.forEach((data) => UserInterface.addToDoLists(data));
+      }
 }
 
 export default UI;
