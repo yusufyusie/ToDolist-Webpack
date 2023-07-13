@@ -1,3 +1,5 @@
+import ToDoList from "./modules/toDoList.js";
+
 document
   .querySelector('.fa-arrows-rotate')
   .addEventListener('click', () => window.location.reload());
