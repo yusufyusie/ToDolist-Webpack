@@ -1,6 +1,7 @@
 import './style.css';
 import ToDoList from "./modules/toDoList.js";
 import UI from './modules/ui.js';
+import LocalStorage from './modules/localStorage.js';
 
 document
   .querySelector('.fa-arrows-rotate')
@@ -15,6 +16,11 @@ document
             <i class="fa-solid fa-arrow-right-to-bracket"></i>
         </form>
         `;
+        UI.showToDoLists();
+        UI.removeToDoLists();
+        UI.updateDesc();
+        CompleteToDoList.compToDoList();
+        CompleteToDoList.clearComp();    
   })
 
   document.querySelector('.add-to-list').addEventListener('submit', (e) => {
