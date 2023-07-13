@@ -1,3 +1,4 @@
+import './style.css';
 import ToDoList from "./modules/toDoList.js";
 
 document
