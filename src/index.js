@@ -1,4 +1,4 @@
-import './style.css';
+// import './style.css';
 import ToDoList from "./modules/toDoList.js";
 import UI from './modules/ui.js';
 import LocalStorage from './modules/localStorage.js';
