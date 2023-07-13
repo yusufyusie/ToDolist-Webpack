@@ -1,7 +1,18 @@
 document
   .querySelector('.fa-arrows-rotate')
   .addEventListener('click', () => window.location.reload());
-  
+
+  document.addEventListener('DOMContentLoaded', () => {
+    listContainer = document.querySelector('.add-to-list');
+    listContainer.innerHTML = 
+        `<p class = "error-message">*Error</p>
+        <form class= "add-to-list" action="">
+            <input type="text" class="text" placeholder="Add to list ..." required />
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </form>
+        `;
+  })
+
   document.querySelector('.add-to-list').addEventListener('submit', (e) => {
     // Prevent actual submit
     e.preventDefault();
@@ -19,6 +30,6 @@ document
     LocalStorage.addToDoLists(todotask);
 
     UserInterface.clearFields();
-    
+
     window.location.reload();
   });
