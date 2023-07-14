@@ -9,7 +9,7 @@ document
   .addEventListener('click', () => window.location.reload());
 
   document.addEventListener('DOMContentLoaded', () => {
-    listContainer = document.querySelector('.add-to-list');
+    const listContainer = document.querySelector('.add-to-list');
     listContainer.innerHTML = 
         `<p class = "error-message">*Error</p>
         <form class= "add-to-list" action="">
@@ -19,7 +19,6 @@ document
         `;
         UI.showToDoLists();
         UI.removeToDoLists();
-        UI.updateDesc();
         CompleteToDoList.compToDoList();
         CompleteToDoList.clearComp();    
   })

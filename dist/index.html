@@ -10,7 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="./style.css"/> -->
+    <link rel="stylesheet" href="./style.css"/>
     <title>To Do List App</title>
 <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
 <body>
@@ -24,10 +24,13 @@
             <span>Enter</span>
         </form>
         <ul id="to-do-list" class="to-do-list"></ul>
+        
         <button class="clear" type="button">Clear all completed</button>
     </section>
 
     <script src="./index.js" type="module"></script>
     <script src="./modules/toDoList.js" type="module"></script>
+    <script src="./modules/localStorage.js" type="module"></script>
+    <script src="./modules/ui.js" type="module"></script>
 </body>
 </html>
