@@ -24,6 +24,7 @@ class LocalStorage {
       }
     });
 
+    // RESET INDEX
     LocalStorage.resetIndex();
 
     LocalStorage.updateDesc();
