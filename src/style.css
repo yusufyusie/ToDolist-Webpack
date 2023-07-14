@@ -1,103 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  body {
-    background-color: #664d03;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #664d03;
+}
 
 section#section {
-    border: 2px solid #fed136;
-    width: 80vw;
-    margin: 4rem auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-  }
-  
-  .add-to-list {
-    width: 100%;
-    padding-right: 0.5rem;
-  }
-  
-  div#refresh {
-    padding-right: 0.25rem;
-  }
-  
-  button.text-btn {
-    border: none;
-    background: none;
-  }
-  
-  .title,
-  .add-to-list,
-  li.checkbox,
-  button.clear {
-    border: 2px solid #664d03;
-    padding: 0.5rem 0;
-  }
-  
-  .title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #dee2e6;
-    background-color: #212529;;
-  }
-  
-  span.inputs {
-    display: flex;
-    width: 100%;
-  }
-  
-  input[type='text'] {
-    border: none;
-    width: 100%;
-    padding: 0.5rem;
-  }
-  
-  input:checked + input {
-    text-decoration: line-through;
-    color: #ccc;
-    font-style: italic;
-  }
-  
-  .new,
-  .add-to-list {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: space-between;
-  }
-  
-  .to-do-list li:nth-child(2n + 1) {
-    background-color: #eee;
-  }
-  
-  button.clear {
-    color: #fff;
-    background-color: #fed136;
-    border-color: #fed136;
-  }
-  
-  img {
-    width: 3vw;
-  }
-  
-  .title p {
-    padding-left: 1rem;
-  }
-  
-  p.error-message {
-    color: #dc3545;
-    display: none;
-    border: solid;
-  }
-  
+  border: 2px solid #fed136;
+  width: 70vw;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.add-to-list {
+  width: 100%;
+  padding-right: 0.5rem;
+}
+
+div#refresh {
+  padding-right: 0.25rem;
+}
+
+button.text-btn {
+  border: none;
+  background: none;
+}
+
+.title,
+.add-to-list,
+li.checkbox,
+button.clear {
+  border: 2px solid #664d03;
+  padding: 0.5rem 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #dee2e6;
+  background-color: #212529;
+}
+
+span.inputs {
+  display: flex;
+  width: 100%;
+}
+
+input[type='text'] {
+  border: none;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+input:checked + input {
+  text-decoration: line-through;
+  color: #ccc;
+  font-style: italic;
+}
+
+.new,
+.add-to-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.to-do-list li:nth-child(2n + 1) {
+  background-color: #eee;
+}
+
+button.clear {
+  color: #fff;
+  background-color: #fed136;
+  border-color: #fed136;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+img {
+  width: 3vw;
+}
+
+.title p {
+  padding-left: 1rem;
+}
+
+p.error-message {
+  color: #dc3545;
+  display: none;
+  border: solid;
+}

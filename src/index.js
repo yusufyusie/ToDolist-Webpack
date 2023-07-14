@@ -1,5 +1,5 @@
 // import './style.css';
-import ToDoList from "./modules/toDoList.js";
+import ToDoList from './modules/toDoList.js';
 import UI from './modules/ui.js';
 import LocalStorage from './modules/localStorage.js';
 import CompleteToDoList from './modules/CompleteToDoList.js';
@@ -8,37 +8,36 @@ document
   .querySelector('.fa-arrows-rotate')
   .addEventListener('click', () => window.location.reload());
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const listContainer = document.querySelector('.add-to-list');
-    listContainer.innerHTML = 
-        `<p class = "error-message">*Error</p>
+document.addEventListener('DOMContentLoaded', () => {
+  const listContainer = document.querySelector('.add-to-list');
+  listContainer.innerHTML = `<p class = "error-message">*Error</p>
         <form class= "add-to-list" action="">
             <input type="text" class="text" placeholder="Add to list ..." required />
             <i class="fa-solid fa-arrow-right-to-bracket"></i>
         </form>
         `;
-        UI.showToDoLists();
-        UI.removeToDoLists();
-        CompleteToDoList.compToDoList();
-        CompleteToDoList.clearComp();    
-  })
+  UI.showToDoLists();
+  UI.removeToDoLists();
+  CompleteToDoList.compToDoList();
+  CompleteToDoList.clearComp();
+});
 
-  document.querySelector('.add-to-list').addEventListener('submit', (e) => {
-    e.preventDefault();
-  
-    const inputText = document.querySelector('.text');
-    const todolists = LocalStorage.getToDoLists();
-    const description = inputText.value;
-    const index = todolists.length + 1;
-    const completed = false;
+document.querySelector('.add-to-list').addEventListener('submit', (e) => {
+  e.preventDefault();
 
-    const todotask = new ToDoList(description, completed, index);
+  const inputText = document.querySelector('.text');
+  const todolists = LocalStorage.getToDoLists();
+  const description = inputText.value;
+  const index = todolists.length + 1;
+  const completed = false;
 
-    UI.addToDoLists(todotask);
+  const todotask = new ToDoList(description, completed, index);
 
-    LocalStorage.addToDoLists(todotask);
+  UI.addToDoLists(todotask);
 
-    UI.clearFields();
+  LocalStorage.addToDoLists(todotask);
 
-    window.location.reload();
-  });
+  UI.clearFields();
+
+  window.location.reload();
+});
