@@ -1,6 +1,12 @@
 let todolists = [];
 
 class LocalStorage {
+   static addToDoLists(data) {
+    const todolists = LocalStorage.getToDoLists();
+    todolists.push(data);
+    localStorage.setItem('todolists', JSON.stringify(todolists));
+  }
+
   static getToDoLists() {
     if (localStorage.getItem('todolists') === null) {
       localStorage.setItem('todolists', JSON.stringify(todolists));
@@ -8,12 +14,6 @@ class LocalStorage {
       todolists = JSON.parse(localStorage.getItem('todolists'));
     }
     return todolists;
-  }
-
-  static addToDoLists(data) {
-    const todolists = LocalStorage.getToDoLists();
-    todolists.push(data);
-    localStorage.setItem('todolists', JSON.stringify(todolists));
   }
 
   static removeToDoLists(newdesc) {
@@ -25,15 +25,13 @@ class LocalStorage {
     });
 
     LocalStorage.resetIndex();
-
-    LocalStorage.updateDesc();
-
-    localStorage.setItem('todolists', JSON.stringify(todolists));
   }
 
   static resetIndex() {
-    todolists.forEach((data, index) => {
-      data.index = index + 1;
+    const todolists = LocalStorage.getToDoLists();
+    todolists.forEach((item, index) => {
+      item.index = index + 1;
+      localStorage.setItem('todolists', JSON.stringify(todolists));
     });
   }
 
@@ -44,6 +42,16 @@ class LocalStorage {
         localStorage.setItem('todolists', JSON.stringify(todolists));
       }
     }
+  }
+
+  static completetask(index) {
+    const todolists = LocalStorage.getToDoLists();
+    for (let i = 0; i < todolists.length; i += 1) {
+      if (todolists[i].index === +index) {
+        todolists[i].completed = !todolists[i].completed;
+      }
+    }
+    localStorage.setItem('todolists', JSON.stringify(todolists));
   }
 }
 
