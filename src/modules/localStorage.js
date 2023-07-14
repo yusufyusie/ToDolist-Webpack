@@ -1,7 +1,7 @@
 let todolists = [];
 
 class LocalStorage {
-   static addToDoLists(data) {
+  static addToDoLists(data) {
     const todolists = LocalStorage.getToDoLists();
     todolists.push(data);
     localStorage.setItem('todolists', JSON.stringify(todolists));
