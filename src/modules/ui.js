@@ -18,33 +18,45 @@ class UI {
     listContent.appendChild(listitem);
   }
 
-  static clearFields() {
-    document.querySelector('.text').value = '';
-  }
-
   static showToDoLists() {
     const todolists = LocalStorage.getToDoLists();
 
     todolists.forEach((data) => UI.addToDoLists(data));
   }
 
+  static clearFields() {
+    document.querySelector('.text').value = '';
+  }
+
   static removeToDoLists() {
-    const dustbin = document
+    const remove = document
       .querySelector('.to-do-list')
       .querySelectorAll('.fa-trash-can');
-
-    dustbin.forEach((bin) => {
+    remove.forEach((bin) => {
       bin.addEventListener('click', (e) => {
         const todolists = LocalStorage.getToDoLists();
-        const elt = e.target.parentElement;
+        const element = e.target.parentElement;
 
-        if (elt.classList.contains('text-btn')) {
-          elt.parentElement.remove();
+        if (element.classList.contains('text-btn')) {
+          element.parentElement.remove();
         }
         localStorage.setItem('todolists', JSON.stringify(todolists));
 
         LocalStorage.removeToDoLists(
           e.target.parentElement.previousElementSibling.children[1].value,
+        );
+      });
+    });
+  }
+
+  static updateDesc() {
+    const description = document.querySelector('#to-do-list').querySelectorAll('.description');
+
+    description.forEach((element) => {
+      element.addEventListener('change', (e) => {
+        LocalStorage.updateDesc(
+          e.target.value,
+          e.target.parentElement.parentElement.id,
         );
       });
     });

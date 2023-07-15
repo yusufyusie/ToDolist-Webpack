@@ -2,6 +2,7 @@
 import ToDoList from './modules/toDoList.js';
 import UI from './modules/ui.js';
 import LocalStorage from './modules/localStorage.js';
+import Completelist from './modules/Completelist.js';
 
 document
   .querySelector('.fa-arrows-rotate')
@@ -17,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
   UI.showToDoLists();
   UI.removeToDoLists();
+  Completelist.CompleteToDoList();
+  Completelist.clearCompleted();
+  UI.updateDesc();
 });
 
 document.querySelector('.add-to-list').addEventListener('submit', (e) => {
