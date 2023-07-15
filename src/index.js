@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   UI.removeToDoLists();
   Completelist.CompleteToDoList();
   Completelist.clearCompleted();
+  UI.updateDesc();
 });
 
 document.querySelector('.add-to-list').addEventListener('submit', (e) => {

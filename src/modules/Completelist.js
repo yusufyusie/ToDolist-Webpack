@@ -8,7 +8,7 @@ class Completelist {
 
     checkbox.forEach((elemnt) => {
       elemnt.addEventListener('change', (e) => {
-        LocalStorage.taskComp(e.target.parentElement.parentElement.id);
+        LocalStorage.completetask(e.target.parentElement.parentElement.id);
       });
     });
   }
@@ -17,7 +17,7 @@ class Completelist {
     const clearButton = document.querySelector('.clear');
     clearButton.addEventListener('click', () => {
       let todolists = LocalStorage.getToDoLists();
-      todolists = todolists.filter((elemnt) => elemnt.comp !== true);
+      todolists = todolists.filter((elemnt) => elemnt.completed !== true);
       localStorage.setItem('todolists', JSON.stringify(todolists));
       window.location.reload();
       LocalStorage.resetIndex();

@@ -21,6 +21,7 @@ class LocalStorage {
     todolists.forEach((data, index) => {
       if (data.description === newdesc) {
         todolists.splice(index, 1);
+        localStorage.setItem('todolists', JSON.stringify(todolists));
       }
     });
 
@@ -36,6 +37,7 @@ class LocalStorage {
   }
 
   static updateDesc(description, index) {
+    const todolists = LocalStorage.getToDoLists();
     for (let i = 0; i < todolists.length; i += 1) {
       if (todolists[i].index === +index) {
         todolists[i].description = description;
