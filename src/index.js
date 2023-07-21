@@ -39,6 +39,5 @@ document.querySelector('.add-to-list').addEventListener('submit', (e) => {
   LocalStorage.addToDoLists(todotask);
 
   UI.clearFields();
-
   window.location.reload();
 });
