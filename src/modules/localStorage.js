@@ -1,4 +1,5 @@
 let todolists = [];
+export const getFromLocalStorage = () => JSON.parse(localStorage.getItem('todoList')) ?? [];
 
 class LocalStorage {
   static addToDoLists(data) {
@@ -57,4 +58,4 @@ class LocalStorage {
   }
 }
 
-module.exports = LocalStorage;
+export default LocalStorage;
