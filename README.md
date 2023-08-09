@@ -62,7 +62,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link](https://yusufyusie.github.io/ToDolist-Webpack/dist/)
+- [See Live Demo here](https://yusufyusie.github.io/ToDolist-Webpack/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
